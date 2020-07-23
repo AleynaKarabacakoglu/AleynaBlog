@@ -3964,6 +3964,7 @@
     <Content Include="Views\Shared\_TopBar.cshtml" />
     <Content Include="Views\Shared\_LeftsideBar.cshtml" />
     <Content Include="Views\Shared\_RightsideBar.cshtml" />
+    <Content Include="Views\AuthorAdmin\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
