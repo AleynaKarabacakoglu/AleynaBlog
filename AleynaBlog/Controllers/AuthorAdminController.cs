@@ -7,15 +7,16 @@ using System.Web.Mvc;
 
 namespace AleynaBlog.Controllers
 {
-    public class LoginController : Controller
+    using Models;
+    public class AuthorAdminController : Controller
     {
-        // GET: Login
-        
+        // GET: Author
+
+        MyBlogEntities db = new MyBlogEntities();
         public ActionResult Index()
         {
-            
-
-            return View();
+            var model = db.Author.ToList();
+            return View(model);
         }
     }
 }
