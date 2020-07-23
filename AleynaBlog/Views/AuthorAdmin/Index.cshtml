@@ -47,17 +47,22 @@
                                     @Html.DisplayFor(modelItem => item.Email)
                                 </td>
                                 <td>
-                                   0 @Html.DisplayFor(modelItem => item.Role)
+                                    @Html.DisplayFor(modelItem => item.Role)
                                 </td>
 
                                 <td>
-                                    <span class="btn bg-cyan waves-effect" id="detail" data-toggle="tooltip" data-placement="top" title="" data-original-title="Detayı Gör" onclick="createModal('@Url.Action("Details", "AuthorAdmin" , new {id=item.Id })')">
-                                        <i class="material-icons"> folder</i>
-                                    </span>
+                                    <a class="btn bg-cyan waves-effect" id="detail" data-toggle="tooltip" data-placement="top" title="" data-original-title="Detayı Gör" 
+                                          href="@Url.Action("Details", "AuthorAdmin" , new {id=item.Id })')">
+                                    <i class="material-icons"> folder</i>
+                                    </a>
 
-                                    <a class="btn bg-purple waves-effect" data-toggle="tooltip" data-placement="top" title="" data-original-title="Düzenle" href="@Url.Action("Edit", "AuthorAdmin" , new {id=item.Id })">  <i class="material-icons">mode_edit</i></a>
+                                    <a class="btn bg-purple waves-effect" data-toggle="tooltip" data-placement="top" title="" data-original-title="Düzenle"
+                                       href="@Url.Action("Edit", "AuthorAdmin" , new {id=item.Id })">  <i class="material-icons">mode_edit</i></a>
 
-                                    <a class="btn bg-red waves-effect" data-target="#deleteAuthor" data-toggle="tooltip" data-placement="top" title="" data-original-title="Sil" onclick="JavaSend(@item.Id)">  <i class="material-icons">delete</i></a>
+                                    <a class="btn bg-purple waves-effect"   data-target="#deleteAuthor" data-toggle="tooltip" data-placement="top" title="" data-original-title="Sil"
+                                       onclick="JavaSend(@item.Id)"> <i class="material-icons">mode_edit</i></a>
+
+                                    @*<a class="btn bg-red waves-effect" data-target="#deleteAuthor" data-toggle="tooltip" data-placement="top" title="" data-original-title="Sil" onclick="JavaSend(@item.Id)">  <i class="material-icons">delete</i></a>*@
 
                                     <script>
                                         function JavaSend(id) {
@@ -85,12 +90,12 @@
 </div>
 <script src="~/Content/Site/js/jquery.js"></script>
 
-<script>
+@*<script>
     function createModal(url) {
         $('#modelContent').load(url);
         $('#myModal').modal('show');
     }
-</script>
+</script>*@
 <!-- Modal -->
 <div class="modal fade" id="deleteAuthor" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">

@@ -18,5 +18,20 @@ namespace AleynaBlog.Controllers
             var model = db.Author.ToList();
             return View(model);
         }
+        public ActionResult Delete(int? Id) //"int?" null dönerse hata vermesin diye bu şekilde yazdim.
+        {
+            if(Id==null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                Author author = db.Author.Find(Id);
+                db.Author.Remove(author);
+                db.SaveChanges();
+                return RedirectToAction("Index"); //Index sayfasına geri döndürüldü.
+            }
+            
+        }
     }
 }
