@@ -191,8 +191,6 @@
             $('#softwareDiv').show();
             $('#humanDiv').hide();
             $('#financeDiv').hide();
-
-
         });
 
 
@@ -211,10 +209,13 @@
         );
 
     })
+</script>
 
-    
+<script>
 
-    
-
-
+    $('.service-catergory').on('click', function () {
+        $('li').removeClass('active');
+        $('#humanDiv').hide();
+        $(this).addClass('active');
+    });
 </script>

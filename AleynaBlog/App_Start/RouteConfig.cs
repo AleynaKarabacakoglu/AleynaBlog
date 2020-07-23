@@ -26,9 +26,15 @@ namespace AleynaBlog
            );
             routes.MapRoute(
               name: "Contact",
-              url: "Iletisim",
+              url: "iletisim",
               defaults: new { controller = "Contact", action = "Index", id = UrlParameter.Optional }
           );
+
+            routes.MapRoute(
+                name: "Project",
+                url: "projelerim",
+                defaults: new { controller = "Project", action = "Index", id = UrlParameter.Optional }
+            );
 
             routes.MapRoute(
                 name: "Default",
