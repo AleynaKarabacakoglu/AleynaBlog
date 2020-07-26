@@ -62,7 +62,7 @@
                         <label for="password">Şifre</label>
                         <div class="form-group">
                             <div class="form-line">
-                                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-conrol", @maxlenght = "50", @required = "reguired" } })
+                                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-conrol", @maxlenght = "50", @required = "reguired",@type="password"} })
 
                                 @*<input type="password" id="password" class="form-control" placeholder="Enter your password">*@
                             </div>
