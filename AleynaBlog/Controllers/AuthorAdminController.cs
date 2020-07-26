@@ -42,7 +42,7 @@ namespace AleynaBlog.Controllers
         }
 
 
-        //Post için create methodu
+        //Post için create methodu-----
             [HttpPost]
         public ActionResult Create(Author author, HttpPostedFileBase File)
         {
