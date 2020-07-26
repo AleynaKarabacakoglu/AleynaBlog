@@ -77,5 +77,46 @@ namespace AleynaBlog.Controllers
             Author author = db.Author.Find(id);
             return PartialView(author);
         }
+
+        public ActionResult Edit(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return HttpNotFound();
+            }
+            Author author = db.Author.Find(id);
+            return View(author);
+        }
+        [HttpPost]
+        public ActionResult Edit(Author auth,HttpPostedFileBase File)
+        {   
+            if(auth!=null)
+            {
+                db.Entry(auth).State = System.Data.Entity.EntityState.Modified; //Entity frameworkte gelen model üzerinde değişiklik yapma hakkı tanır.
+                db.Entry(auth).Property(m => m.AddedBy).IsModified = false;
+                db.Entry(auth).Property(m => m.AddedDate).IsModified = false;
+                if (File != null)
+                {
+                    FileInfo fileinfo = new FileInfo(File.FileName);
+                    WebImage img = new WebImage(File.InputStream);
+                    string uzanti = (Guid.NewGuid().ToString() + fileinfo.Extension).ToLower();
+                    img.Resize(225, 180, false, false);
+                    string tamyol = "~/images/users/" + uzanti;
+                    img.Save(Server.MapPath(tamyol));
+                    auth.Image = "/images/users/" + uzanti;
+                }
+                else
+                {
+                    db.Entry(auth).Property(m => m.Image).IsModified = false;
+                }
+                auth.ModifyBy = "Aleyna Karabacakoğlu";
+                auth.ModifyDate = DateTime.Now;
+                
+            }
+            db.SaveChanges();
+            return RedirectToAction("Index", "AuthorAdmin");
+        }
+        
+        
     }
 }
