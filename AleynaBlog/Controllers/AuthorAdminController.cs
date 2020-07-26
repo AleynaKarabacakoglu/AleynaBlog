@@ -67,5 +67,15 @@ namespace AleynaBlog.Controllers
             }
             return RedirectToAction("Index");
         }
+
+        public ActionResult Details(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return HttpNotFound();
+            }
+            Author author = db.Author.Find(id);
+            return PartialView(author);
+        }
     }
 }
