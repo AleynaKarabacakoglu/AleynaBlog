@@ -8,25 +8,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-
     <link rel="stylesheet" href="~/Content/Site/css/style.css">
     <link rel="stylesheet" href="~/Content/Site/css/responsive.css">
-
     <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" href="images/favicon/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="images/favicon/favicon-16x16.png" sizes="16x16">
-
 </head>
 <body>
-
     <div class="boxed_wrapper">
 
         <header class="top-bar">
             <div class="container">
                 <div class="clearfix">
                     <ul class="top-bar-text float_left">
-                        <li><i class="flaticon-telephone"></i>Phone +123-456-7890</li>
-                        <li><i class="flaticon-envelope"></i>Yourcompany@gmail.com</li>
+                        <li><i class="flaticon-telephone"></i>Phone 0(544) 503 86 39</li>
+                        <li><i class="flaticon-envelope"></i>aleynakarabacakoglu@gmail.com</li>
                     </ul>
                     <ul class="social-style-one float_right hidden-xs">
                         <li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -118,20 +114,11 @@
                                         </ul>
                                     </li>
 
-                                    @*<li class="dropdown">
-                                        <a href="#">Servisler</a>
-                                        <ul>
-                                            <li><a href="service.html">Services</a></li>
-                                            <li><a href="service-single.html">Service Details</a></li>
-                                        </ul>
-                                    </li>*@
-
                                     <li class="dropdown">
                                         <a href="@Url.Action("Index","Blog")">Blog</a>
                                         <ul>
-                                            <li><a href="blog-grid.html">News Grid</a></li>
-                                            <li><a href="blog-large.html">News Classic</a></li>
-                                            <li><a href="blog-details.html">News Details</a></li>
+                                            <li><a href="blog-grid.html">Yeni Postlar</a></li>
+                                           
                                         </ul>
                                     </li>
 
@@ -223,8 +210,7 @@
                                         </div>
                                         <div class="widget-content">
                                             <ul class="list">
-                                                <li><a href="about.html">About</a></li>
-                                                <li><a href="service.html">Services</a></li>
+                                                <li><a href="about.html">About</a></li>                                              
                                                 <li><a href="team.html">Team</a></li>
                                                 <li><a href="our-projects.html">Projects</a></li>
                                                 <li><a href="blog-grid.html">Blog</a></li>
@@ -293,14 +279,13 @@
             <div class="footer-bottom">
                 <div class="container">
                     <div class="pull-left copy-text">
-                        <p>Copyrights © 2018 All Rights Reserved by <a href="#"> Narail.</a></p>
+                        
 
                     </div><!-- /.pull-right -->
                     <div class="pull-right get-text">
                         <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">FAQ's</a></li>
-                            <li><a href="#"> Login</a></li>
+                            <li><a href="@Url.Action("Index","About")">Hakkımda</a></li>
+                            <li><a href="#"> Giriş</a></li>
                         </ul>
                     </div><!-- /.pull-left -->
                 </div><!-- /.container -->
