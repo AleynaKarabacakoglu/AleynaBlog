@@ -98,12 +98,7 @@
 
                                     <li class="dropdown">
                                         <a href="@Url.Action("Index","About")">Hakkımda</a>
-                                        @*<ul>
-                                            <li><a href="about.html">Ön Yazı</a></li>
-                                            <li><a href="team.html">Team</a></li>
-                                            <li><a href="testimonials.html">Testimonials</a></li>
-                                            <li><a href="error.html">404 Page</a></li>
-                                        </ul>*@
+                                        
                                     </li>
 
                                     <li class="dropdown">
@@ -210,11 +205,11 @@
                                         </div>
                                         <div class="widget-content">
                                             <ul class="list">
-                                                <li><a href="about.html">About</a></li>                                              
-                                                <li><a href="team.html">Team</a></li>
-                                                <li><a href="our-projects.html">Projects</a></li>
-                                                <li><a href="blog-grid.html">Blog</a></li>
-                                                <li><a href="contact.html">Contact</a></li>
+                                                <li> <a href="@Url.Action("Index","About")">Hakkımda</a></li>                                              
+                                                <li><a href="team.html">Takım</a></li>
+                                                <li> <a href="@Url.Action("Index","Project")">Projeler</a></li>
+                                                <li> <a href="@Url.Action("Index","Blog")">Blog</a></li>
+                                                <li> <a href="@Url.Action("Index","Contact")">İletişim</a></li>
                                             </ul>
                                         </div>
                                     </div>
