@@ -1,0 +1,51 @@
+﻿@model AleynaBlog.Models.Contact
+<div class="col-md-8 col-sm-12 col-xs-12">
+    <div class="sec-title">
+        <h2>Mesaj Yazın</h2>
+    </div>
+    <div class="default-form-area">
+         @using (Html.BeginForm("CreateMessage", "Contact", FormMethod.Post, new { enctype = "multipart/form-data" }))
+           { 
+            <div class="row clearfix">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+
+                    <div class="form-group">
+                        <label for="name">İsim  -  Soyisim:</label>
+                        @Html.EditorFor(model => model.NameSurname, new { htmlAttributes = new { @class = "form-conrol", @required = "reguired" } })
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label for="name">Mail:</label>
+                        @Html.EditorFor(model => model.Mail, new { htmlAttributes = new { @class = "form-conrol", @required = "reguired" } })
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label for="name">Numara:</label>
+                        @Html.EditorFor(model => model.Number, new { htmlAttributes = new { @class = "form-conrol", @required = "reguired" } })
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label for="name">Konu:</label>
+                        @Html.EditorFor(model => model.Subject, new { htmlAttributes = new { @class = "form-conrol", @required = "reguired" } })
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                        <label for="name">Mesajınız:</label>
+                        @Html.EditorFor(model => model.Message, new { htmlAttributes = new { @class = "form-conrol", @required = "reguired"  } })
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                        <input id="form_botcheck" name="form_botcheck" class="form-control" type="hidden" value="">
+                        <button class="btn-style-one" type="submit" data-loading-text="Please wait...">Mesaj Gönder</button>
+                    </div>
+                </div>
+
+            </div>
+        }
+    </div>
+</div>
