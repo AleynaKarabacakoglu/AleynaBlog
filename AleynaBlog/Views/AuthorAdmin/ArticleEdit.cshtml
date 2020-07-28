@@ -1,0 +1,67 @@
+﻿@model AleynaBlog.Models.Article
+@{
+    ViewBag.Title = "ArticleEdit";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h2>
+                    YAZAR EKLEME SAYFASI
+                </h2>
+                <ul class="header-dropdown m-r--5">
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="material-icons">more_vert</i>
+                        </a>
+
+                    </li>
+                </ul>
+            </div>
+            <div class="body">
+
+                @using (Html.BeginForm("ArticleEdit", "AuthorAdmin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @*<-----------------------Yazar Resmi------------------------>*@
+                    <label for="image">Resim Ekle</label>
+                    <div class="form-group">
+                        <div class="form-line">
+                            <input type="file" id="File" name="File" accept=".jpg,.JPG,.PNG,.png,.jpeg,.JPEG" class="form-control">
+                        </div>
+                    </div>
+
+                    @*<-----------------------Başlık------------------------>*@
+                    <label for="name">Makale Başlığı</label>
+                    <div class="form-group">
+                        <div class="form-line">
+
+                            @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-conrol", @required = "reguired" } })
+
+                        </div>
+                    </div>
+
+                    @*<----------------------- İçerik ---------------------------->*@
+                    <label for="email">İçerik</label>
+                    <div class="form-group">
+                        <div class="form-line">
+                            @Html.EditorFor(model => model.Contain, new { htmlAttributes = new { style = "height: 100px; width:600px", @class = "form-conrol", @required = "reguired" } });;
+
+                        </div>
+                    </div>
+
+                    <br>
+                    <div align="center">
+                        <input type="submit" class="btn btn-success m-t-15 waves-effect" value="Düzenle">
+                    </div>
+
+                }
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+

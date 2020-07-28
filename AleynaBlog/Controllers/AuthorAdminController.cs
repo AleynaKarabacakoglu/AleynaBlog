@@ -139,7 +139,45 @@ namespace AleynaBlog.Controllers
             db.SaveChanges();
             return RedirectToAction("Index", "AuthorAdmin");
         }
-        
-        
+
+        public ActionResult ArticleEdit(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return HttpNotFound();
+            }
+            Article article = db.Article.Find(id);
+            return View(article);
+        }
+        [HttpPost]
+        public ActionResult ArticleEdit(Article article, HttpPostedFileBase File)
+        {
+            if (article != null)
+            {
+                db.Entry(article).State = System.Data.Entity.EntityState.Modified; 
+                db.Entry(article).Property(m => m.AddedDate).IsModified = false;
+                if (File != null)
+                {
+                    FileInfo fileinfo = new FileInfo(File.FileName);
+                    WebImage img = new WebImage(File.InputStream);
+                    string uzanti = (Guid.NewGuid().ToString() + fileinfo.Extension).ToLower();
+                    img.Resize(225, 180, false, false);
+                    string tamyol = "~/images/users/" + uzanti;
+                    img.Save(Server.MapPath(tamyol));
+                    article.Image = "/images/users/" + uzanti;
+                }
+                else
+                {
+                    db.Entry(article).Property(m => m.Image).IsModified = false;
+                }
+                
+                //article.ModifyDate = DateTime.Now;
+
+            }
+            db.SaveChanges();
+            return RedirectToAction("ArticleIndex", "AuthorAdmin");
+        }
+
+
     }
 }

@@ -3984,6 +3984,7 @@
     <Content Include="Views\Blog\AddArticle.cshtml" />
     <Content Include="Views\Blog\Article.cshtml" />
     <Content Include="Views\AuthorAdmin\ArticleIndex.cshtml" />
+    <Content Include="Views\AuthorAdmin\ArticleEdit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
