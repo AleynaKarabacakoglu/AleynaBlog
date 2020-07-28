@@ -172,7 +172,6 @@ namespace AleynaBlog.Controllers
                     db.Entry(article).Property(m => m.Image).IsModified = false;
                 }
                 
-                //article.ModifyDate = DateTime.Now;
 
             }
             db.SaveChanges();
