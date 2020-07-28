@@ -1,0 +1,30 @@
+﻿@using AleynaBlog.Models;
+
+    <div class="row">
+        @foreach (Article article in ViewBag.makalelerim)
+        {
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                News Style One
+                <div class="news-style-one">
+                    <div class="inner-box">
+                        <div class="image">
+                            <img src=@article.Image alt="">
+                            <div class="post-time">@article.AddedDate</div>
+                        </div>
+                        <div class="lower-content">
+                            <h3><a href="blog-details.html">@article.Title</a></h3>
+                            <div class="text">
+                                @article.Contain
+                            </div>
+                            <div class="link-btn2 center">
+                                <a href="blog-details.html" class="btn-style-two">Daha fazla Oku</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        }
+
+
+    </div>

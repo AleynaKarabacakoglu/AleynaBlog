@@ -29,9 +29,17 @@ namespace AleynaBlog.Controllers
             return View();
         }
 
-        public ActionResult Populer()
+        public ActionResult Detail()
         {
+            List<Article> makaleler = db.Article.ToList();
+            ViewBag.makalelerim = makaleler;
+            return View();
+        }
 
+        public ActionResult Article()
+        {
+            List<Article> makaleler = db.Article.ToList();
+            ViewBag.makalelerim = makaleler;
             return View();
         }
 
@@ -41,9 +49,10 @@ namespace AleynaBlog.Controllers
             ViewBag.etiketlerim = etiketler;
             return View();
         }
-        public ActionResult Detail()
+        public ActionResult Populer()
         {
-
+            List<Article> makaleler = db.Article.ToList();
+            ViewBag.makalelerim = makaleler;
             return View();
         }
 

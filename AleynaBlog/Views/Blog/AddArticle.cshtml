@@ -11,12 +11,12 @@
     <div class="sec-title">
         <h2>Makale Ekleme Sayfası</h2>
     </div>
-    <div class="default-form-area">
+    <div class="body">
        
             @using (Html.BeginForm("AddArticle", "Blog", FormMethod.Post, new { enctype = "multipart/form-data" }))
             {
                 @*<-----------------------Yazar Resmi------------------------>*@
-                <label for="image">Yazar Resmi</label>
+                <label for="image">Resim Ekle</label>
                 <div class="form-group">
                     <div class="form-line">
                         <input type="file" id="File" name="File" accept=".jpg,.JPG,.PNG,.png,.jpeg,.JPEG" class="form-control">
@@ -37,7 +37,7 @@
                 <label for="email">İçerik</label>
                 <div class="form-group">
                     <div class="form-line">
-                        @Html.EditorFor(model => model.Contain, new { htmlAttributes = new { style = "height: 30px;",  @class = "form-conrol", @required = "reguired" } });;
+                        @Html.EditorFor(model => model.Contain, new { htmlAttributes = new { style = "height: 100px; width:600px",  @class = "form-conrol", @required = "reguired" } });;
 
                     </div>
                 </div>

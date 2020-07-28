@@ -20,6 +20,13 @@ namespace AleynaBlog.Controllers
             var model = db.Author.ToList();
             return View(model);
         }
+
+        public ActionResult ArticleIndex()
+        {
+            var model = db.Article.ToList();
+            return View(model);
+        }
+
         public ActionResult Delete(int? Id) //"int?" null donerse hata vermemesi icin bu şekilde yazdim.
         {
             if(Id==null)
@@ -35,15 +42,31 @@ namespace AleynaBlog.Controllers
             }
         }
 
+        public ActionResult ArticleDelete(int? Id) //"int?" null donerse hata vermemesi icin bu şekilde yazdim.
+        {
+            if (Id == null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                Article article= db.Article.Find(Id);
+                db.Article.Remove(article);
+                db.SaveChanges();
+                return RedirectToAction("ArticleIndex"); //Index sayfasına geri donduruldü.
+            }
+        }
+
         //GET için create methodu
         public ActionResult Create()
         {
             return View();
         }
+        
 
 
         //Post için create methodu-----
-            [HttpPost]
+        [HttpPost]
         public ActionResult Create(Author author, HttpPostedFileBase File)
         {
             var authorExist = db.Author.Any(m => m.Email == author.Email);
