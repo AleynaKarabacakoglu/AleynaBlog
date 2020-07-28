@@ -6,9 +6,11 @@ using System.Web.Mvc;
 
 namespace AleynaBlog.Controllers
 {
+    using Models;
     public class HomeController : Controller
     {
         // GET: Home
+        MyBlogEntities db = new MyBlogEntities();
         public ActionResult Index()
         {
             ViewBag.Title = "Benim Bloğum";
@@ -38,6 +40,8 @@ namespace AleynaBlog.Controllers
         }
         public ActionResult Blog()
         {
+            List<Article> articles = db.Article.ToList();
+            ViewBag.makalelerim = articles;
             return View();
         }
     }
