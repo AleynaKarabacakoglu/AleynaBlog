@@ -27,5 +27,6 @@ namespace AleynaBlog.Models
     
         public virtual DbSet<Author> Author { get; set; }
         public virtual DbSet<Contact> Contact { get; set; }
+        public virtual DbSet<Tag> Tag { get; set; }
     }
 }

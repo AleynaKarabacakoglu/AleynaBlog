@@ -12,9 +12,7 @@ namespace AleynaBlog.Controllers
         // GET: Login
         
         public ActionResult Index()
-        {
-            
-
+        {            
             return View();
         }
     }
