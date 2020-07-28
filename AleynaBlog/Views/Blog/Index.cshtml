@@ -1,4 +1,5 @@
-﻿
+﻿@model IEnumerable<AleynaBlog.Models.Article>
+@using AleynaBlog.Models
 @{
 
     Layout = "~/Views/Shared/_LayoutPage1.cshtml";
@@ -16,12 +17,14 @@
         <div class="pull-left">
             <ul class="list-inline link-list">
                 @*<li>
-                    <a href="@Url.Action("Index","Home")">Anasayfa</a>
-                </li>*@
+                        <a href="@Url.Action("Index","Home")">Anasayfa</a>
+                    </li>*@
                 <li>
-                    <a href="#">Makale Oluştur</a>
+                    <a class="btn bg-purple waves-effect" data-toggle="tooltip" data-placement="top" title="" data-original-title="Düzenle"
+                       href="@Url.Action("AddArticle", "Blog" )">  <i class="material-icons">Makale Ekle</i></a>
+                    @*<a href="@Url.Action("Index","AddArticle")">Makale Oluştur</a>*@
                 </li>
-                
+
             </ul><!-- /.list-line -->
         </div><!-- /.pull-left -->
         <div class="pull-right">

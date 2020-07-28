@@ -5,6 +5,17 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="MyBlogModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Article">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Contain" Type="nvarchar" MaxLength="1500" Nullable="false" />
+          <Property Name="AddedDate" Type="datetime" />
+          <Property Name="Image" Type="nvarchar" MaxLength="250" />
+          <Property Name="AuthorId" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="Author">
           <Key>
             <PropertyRef Name="Id" />
@@ -47,6 +58,7 @@
           <Property Name="Name" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityContainer Name="MyBlogModelStoreContainer">
+          <EntitySet Name="Article" EntityType="Self.Article" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Author" EntityType="Self.Author" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Contact" EntityType="Self.Contact" Schema="dbo" store:Type="Tables" />
@@ -61,6 +73,7 @@
           <EntitySet Name="Contact" EntityType="MyBlogModel.Contact" />
           <EntitySet Name="Tag" EntityType="MyBlogModel.Tag" />
           <EntitySet Name="Category" EntityType="MyBlogModel.Category" />
+          <EntitySet Name="Article" EntityType="MyBlogModel.Article" />
         </EntityContainer>
         <EntityType Name="Author">
           <Key>
@@ -102,6 +115,17 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Article">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Contain" Type="String" Nullable="false" MaxLength="1500" FixedLength="false" Unicode="true" />
+          <Property Name="AddedDate" Type="DateTime" Precision="3" />
+          <Property Name="Image" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="AuthorId" Type="Int32" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -151,6 +175,18 @@
               <MappingFragment StoreEntitySet="Category">
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Article">
+            <EntityTypeMapping TypeName="MyBlogModel.Article">
+              <MappingFragment StoreEntitySet="Article">
+                <ScalarProperty Name="AuthorId" ColumnName="AuthorId" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+                <ScalarProperty Name="Contain" ColumnName="Contain" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

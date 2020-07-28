@@ -3704,6 +3704,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Article.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Author.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -3978,6 +3981,7 @@
     <Content Include="Views\AuthorAdmin\Details.cshtml" />
     <Content Include="Views\AuthorAdmin\Edit.cshtml" />
     <Content Include="Views\Contact\CreateMessage.cshtml" />
+    <Content Include="Views\Blog\AddArticle.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

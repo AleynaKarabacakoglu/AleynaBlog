@@ -41,6 +41,12 @@ namespace AleynaBlog
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+             name: "AddArticle",
+             url: "AddArticle",
+             defaults: new { controller = "Blog", action = "AddArticle", id = UrlParameter.Optional }
+         );
         }
     }
 }
