@@ -75,6 +75,7 @@ namespace AleynaBlog.Controllers
             {
                 author.AddedDate = DateTime.Now;
                 author.AddedBy = "Aleyna";
+                author.Role = "Admin";
                 if (File != null)
                 {
                     FileInfo fileinfo = new FileInfo(File.FileName);
