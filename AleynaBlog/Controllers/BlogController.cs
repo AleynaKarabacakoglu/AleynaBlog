@@ -19,7 +19,8 @@ namespace AleynaBlog.Controllers
         }
         public ActionResult Category()
         {
-
+            List<Category> kategoriler = db.Category.ToList();
+            ViewBag.kategorilerim = kategoriler;
             return View();
         }
 
@@ -41,16 +42,27 @@ namespace AleynaBlog.Controllers
             return View();
         }
 
-        public String Listele()
-        {   
-            //Linq methodları ile veri listeleme
-            string sonuc = "";
-            List<Tag> etiketler = db.Tag.ToList();
-            foreach (Tag tag in etiketler)
-            {
-                sonuc += "</br>"+tag.Name;
-            }
-            return sonuc;
-        }
+        //public String Listele()
+        //{   
+        //    //Linq methodları ile veri listeleme
+        //    string sonuc = "";
+        //    List<Tag> etiketler = db.Tag.ToList();
+        //    foreach (Tag tag in etiketler)
+        //    {
+        //        sonuc += "</br>"+tag.Name;
+        //    }
+        //    return sonuc;
+        //}
+        //public String KategoriListele()
+        //{
+        //    //Linq methodları ile veri listeleme
+        //    string sonuc = "";
+        //    List<Category> kategoriler = db.Category.ToList();
+        //    foreach (Category kategori in kategoriler)
+        //    {
+        //        sonuc += "</br>" + kategori.Name;
+        //    }
+        //    return sonuc;
+        //}
     }
 }
