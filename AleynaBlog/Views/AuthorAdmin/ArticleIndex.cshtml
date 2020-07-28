@@ -17,7 +17,6 @@
                         <tr>
                             <th>Makale Resmi</th>
                             <th>Makale Başlığı</th>
-                            <th>Makale İçeriği</th>
                             <th>Makale Eklenme Tarihi</th>
                             <th>İşlemler</th>
                         </tr>
@@ -43,9 +42,6 @@
                                 </td>
 
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.Contain)
-                                </td>
-                                <td>
                                     @Html.DisplayFor(modelItem => item.AddedDate)
                                 </td>
 
@@ -54,8 +50,8 @@
                                     @*<a class="btn bg-purple waves-effect" data-toggle="tooltip" data-placement="top" title="" data-original-title="Düzenle"
                                        href="@Url.Action("Edit", "AuthorAdmin" , new {id=item.Id })">  <i class="material-icons">mode_edit</i></a>*@
 
-                                    <a class="btn bg-purple waves-effect" data-target="#deleteArticle" data-toggle="tooltip" data-placement="top" title="" data-original-title="Sil"
-                                       onclick="JavaSend(@item.Id)"> <i class="material-icons">mode_edit</i></a>
+                                    <a class="btn bg-red waves-effect" data-target="#deleteArticle" data-toggle="tooltip" data-placement="top" title="" data-original-title="Sil"
+                                       onclick="JavaSend(@item.Id)"> <i class="material-icons">delete</i></a>
 
                                     @*<a class="btn bg-red waves-effect" data-target="#deleteAuthor" data-toggle="tooltip" data-placement="top" title="" data-original-title="Sil" onclick="JavaSend(@item.Id)">  <i class="material-icons">delete</i></a>*@
 
