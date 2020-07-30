@@ -14,7 +14,6 @@ namespace AleynaBlog.Controllers
     public class BlogController : Controller
     {
         MyBlogEntities db = new MyBlogEntities();
-        // GET: Blog
         public ActionResult Index()
         {
             ViewBag.Title = "Blog";
@@ -85,27 +84,28 @@ namespace AleynaBlog.Controllers
             return RedirectToAction("Index");
 
         }
-        //public String Listele()
-        //{   
-        //    //Linq methodları ile veri listeleme
-        //    string sonuc = "";
-        //    List<Tag> etiketler = db.Tag.ToList();
-        //    foreach (Tag tag in etiketler)
-        //    {
-        //        sonuc += "</br>"+tag.Name;
-        //    }
-        //    return sonuc;
-        //}
-        //public String KategoriListele()
-        //{
-        //    //Linq methodları ile veri listeleme
-        //    string sonuc = "";
-        //    List<Category> kategoriler = db.Category.ToList();
-        //    foreach (Category kategori in kategoriler)
-        //    {
-        //        sonuc += "</br>" + kategori.Name;
-        //    }
-        //    return sonuc;
-        //}
+        /*
+        public String Listele()
+        {
+            //Linq methodları ile veri listeleme
+            string sonuc = "";
+            List<Tag> etiketler = db.Tag.ToList();
+            foreach (Tag tag in etiketler)
+            {
+                sonuc += "</br>" + tag.Name;
+            }
+            return sonuc;
+        }
+        public String KategoriListele()
+        {
+            //Linq methodları ile veri listeleme
+            string sonuc = "";
+            List<Category> kategoriler = db.Category.ToList();
+            foreach (Category kategori in kategoriler)
+            {
+                sonuc += "</br>" + kategori.Name;
+            }
+            return sonuc;
+        }*/
     }
 }

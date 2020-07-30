@@ -15,6 +15,7 @@ namespace AleynaBlog.Controllers
     {
 
         MyBlogEntities db = new MyBlogEntities();
+        [Authorize]
         public ActionResult Index()
         {
             var model = db.Author.ToList();
@@ -171,8 +172,6 @@ namespace AleynaBlog.Controllers
                 {
                     db.Entry(article).Property(m => m.Image).IsModified = false;
                 }
-                
-
             }
             db.SaveChanges();
             return RedirectToAction("ArticleIndex", "AuthorAdmin");
