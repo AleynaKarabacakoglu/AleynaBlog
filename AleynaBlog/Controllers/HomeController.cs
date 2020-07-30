@@ -10,6 +10,7 @@ namespace AleynaBlog.Controllers
     public class HomeController : Controller
     {
 
+
         MyBlogEntities db = new MyBlogEntities();
         public ActionResult Index()
         {
